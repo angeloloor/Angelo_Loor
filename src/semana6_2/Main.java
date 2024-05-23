@@ -39,10 +39,27 @@ class Taxi extends Vehiculo {
     }
 
 }
+class taxi_pirata extends Taxi{
+    private String placa_taxipirata;
+    private String modelo_taxipirata;
+    private int anio_taxipirata;
+    public taxi_pirata(String marca, String modelo, double precio,int numPuertas,String color,String placa,int anio_taxi,String marca_taxi,String placa_taxipirata
+    ,String modelo_taxipirata,int anio_taxipirata){
+        super(marca, modelo,precio,numPuertas,color,placa,anio_taxi,marca_taxi);
+        this.placa_taxipirata = placa_taxipirata;
+        this.modelo_taxipirata = modelo_taxipirata;
+        this.anio_taxipirata = anio_taxipirata;
+    }
+    public void mostrainfoTaxipirata(){
+        mostrarInfo();
+        mostrarInfoCoche();
+        System.out.println("Placa taxi pirata "+placa_taxipirata+" Modelo del taxi pirata "+modelo_taxipirata+" Año del taxi pirata "+anio_taxipirata);
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        Taxi mitaxi = new Taxi("Toyota", "Corolla", 60.80,4,"ROJO","XL890",
-                1990,"TOYOTA");
-        mitaxi.mostrarInfoCoche();
+        taxi_pirata mitaxi = new taxi_pirata("Toyota", "Corolla", 60.80,4,"ROJO","XL890",
+                1990,"TOYOTA","PQ768","AVEO",2005);
+        mitaxi.mostrainfoTaxipirata();
     }
 }
